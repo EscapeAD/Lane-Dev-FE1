@@ -7,11 +7,13 @@ import { ImageUploadModule } from 'ng2-imageupload';
 
 import { AppComponent } from './app.component';
 import { ImageComponent } from './image/image.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ImageComponent
+    ImageComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
