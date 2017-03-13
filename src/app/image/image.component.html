@@ -3,16 +3,18 @@
   <div class='row'>
   <div id='imagecenter' class='col border'>
       <img
-      [@rotating]='rotString'
-      [@translating]='tranlateString'
-      [@scaling]='scaleStat'
-      [@opaciting]='opacityStat'
+      [ngClass]="{
+        'rotate': rotateStat,
+        'translate': translateStat,
+        'scale': scaleStat,
+        'opacity': opacityStat
+    }"
        class="img-fluid" alt="Responsive image" id='imageChange' [src]="src" [hidden]="!src"><br>
   </div>
   <div class='text-center col-3'>
     <h5>Avalible actions</h5>
     <div class="buttonsize"><button *ngIf='!rotateStat' (click)='rotate()' class='btn-space btn btn-primary'>Rotate</button></div>
-    <div class="buttonsize"><button *ngIf='!tranlateStat' (click)='translate()' class='btn-space btn btn-primary'>Translate</button></div>
+    <div class="buttonsize"><button *ngIf='!translateStat' (click)='translate()' class='btn-space btn btn-primary'>Translate</button></div>
     <div class="buttonsize"><button *ngIf='!scaleStat' (click)='scale()' class='btn-space btn btn-primary'>Scale</button></div>
     <div class="buttonsize"><button *ngIf='!opacityStat' (click)='opacity()' class='btn-space btn btn-primary'>Opacity</button></div>
 
@@ -21,7 +23,7 @@
   <div class='text-center col-3'>
     <h5>Applied actions</h5>
     <div class="buttonsize"><button *ngIf='rotateStat'    (click)='rotate()' class='btn-space btn btn-primary'>Rotate</button></div>
-    <div class="buttonsize"><button *ngIf='tranlateStat' (click)='translate()' class='btn-space btn btn-primary'>Translate</button></div>
+    <div class="buttonsize"><button *ngIf='translateStat' (click)='translate()' class='btn-space btn btn-primary'>Translate</button></div>
     <div class="buttonsize"><button *ngIf='scaleStat' (click)='scale()' class='btn-space btn btn-primary'>Scale</button></div>
     <div class="buttonsize"><button *ngIf='opacityStat' (click)='opacity()' class='btn-space btn btn-primary'>Opacity</button></div>
 
@@ -36,3 +38,9 @@
 
 </div>
 </div>
+<!-- [ngClass]="{
+  'rotate1': rotateStat,
+  'translate1': translateStat,
+  'scale1': scaleStat,
+  'opacity1': opacityStat,
+}" -->

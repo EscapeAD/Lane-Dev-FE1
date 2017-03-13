@@ -22,3 +22,18 @@
   height: 3em;
 
 }
+.rotate {
+  transform: rotate(45deg);
+}
+
+.scale {
+  transform: scale(0.5);
+}
+
+.translate {
+  transform: translateX(40px);
+}
+
+.opacity {
+  opacity: 0.5;
+}
