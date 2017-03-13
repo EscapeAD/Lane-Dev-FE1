@@ -1,3 +1,38 @@
-<p>
-  image works!
-</p>
+<div class="container top">
+
+  <div class='row'>
+  <div id='imagecenter' class='col border'>
+      <img
+      [@rotating]='rotateStat'
+      [@translating]='tranlateStat'
+      [@scaling]='scaleStat'
+      [@opaciting]='opacityStat'
+       class="img-fluid" alt="Responsive image" id='imageChange' [src]="src" [hidden]="!src"><br>
+  </div>
+  <div class='text-center col-3'>
+    <h5>Avalible actions</h5>
+    <div class="buttonsize"><button *ngIf='!rotateStat' (click)='rotate()' class='btn-space btn btn-primary'>Rotate</button></div>
+    <div class="buttonsize"><button *ngIf='!tranlateStat' (click)='translate()' class='btn-space btn btn-primary'>Translate</button></div>
+    <div class="buttonsize"><button *ngIf='!scaleStat' (click)='scale()' class='btn-space btn btn-primary'>Scale</button></div>
+    <div class="buttonsize"><button *ngIf='!opacityStat' (click)='opacity()' class='btn-space btn btn-primary'>Opacity</button></div>
+
+
+  </div>
+  <div class='text-center col-3'>
+    <h5>Applied actions</h5>
+    <div class="buttonsize"><button *ngIf='rotateStat'    (click)='rotate()' class='btn-space btn btn-primary'>Rotate</button></div>
+    <div class="buttonsize"><button *ngIf='tranlateStat' (click)='translate()' class='btn-space btn btn-primary'>Translate</button></div>
+    <div class="buttonsize"><button *ngIf='scaleStat' (click)='scale()' class='btn-space btn btn-primary'>Scale</button></div>
+    <div class="buttonsize"><button *ngIf='opacityStat' (click)='opacity()' class='btn-space btn btn-primary'>Opacity</button></div>
+
+
+  </div>
+</div>
+  <div class="p-2"><strong> Select Image</strong>
+  <input type="file" image-upload
+  (imageSelected)="selected($event)"
+  [resizeOptions]="resizeOptions">
+
+
+</div>
+</div>
