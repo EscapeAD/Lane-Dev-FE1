@@ -77,6 +77,6 @@ shadowStat:  boolean = false
     this.translateStat   = false
     this.scaleStat       = false
     this.opacityStat     = false
-    this.shadowStatS     = false
+    this.shadowStat     = false
   }
 }
