@@ -1,19 +1,17 @@
 #imagecenter {
-  height: 28em;
+  height: 30em;
   padding: 2em;
 
 }
 
 #imageChange{
   display: block;
-  margin: auto auto;
-  padding-top: 2em;
+  margin: 0 auto;
 }
 
-.border {
-  /*border: 1px solid black;*/
+.btn-space{
+  width: 100%;
 }
-
 .top {
   margin-top: 3em;
 }
@@ -36,4 +34,8 @@
 
 .opacity {
   opacity: 0.5;
+}
+
+.shadow {
+  filter: grayscale(100%);
 }

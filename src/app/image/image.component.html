@@ -1,14 +1,14 @@
 <div class="container top">
-
   <div class='row'>
   <div id='imagecenter' class='col border'>
       <img
-      [ngClass]="{
-        'rotate': rotateStat,
-        'translate': translateStat,
-        'scale': scaleStat,
-        'opacity': opacityStat
+      [ngStyle]="{
+        'transform': transformation
     }"
+      [ngClass]="{
+        'opacity': opacityStat,
+        'shadow' : shadowStat
+      }"
        class="img-fluid" alt="Responsive image" id='imageChange' [src]="src" [hidden]="!src"><br>
   </div>
   <div class='text-center col-3'>
@@ -17,8 +17,7 @@
     <div class="buttonsize"><button *ngIf='!translateStat' (click)='translate()' class='btn-space btn btn-primary'>Translate</button></div>
     <div class="buttonsize"><button *ngIf='!scaleStat' (click)='scale()' class='btn-space btn btn-primary'>Scale</button></div>
     <div class="buttonsize"><button *ngIf='!opacityStat' (click)='opacity()' class='btn-space btn btn-primary'>Opacity</button></div>
-
-
+    <div class="buttonsize"><button *ngIf='!shadowStat' (click)='shadow()' class='btn-space btn btn-primary'>Shadow</button></div>
   </div>
   <div class='text-center col-3'>
     <h5>Applied actions</h5>
@@ -26,21 +25,17 @@
     <div class="buttonsize"><button *ngIf='translateStat' (click)='translate()' class='btn-space btn btn-primary'>Translate</button></div>
     <div class="buttonsize"><button *ngIf='scaleStat' (click)='scale()' class='btn-space btn btn-primary'>Scale</button></div>
     <div class="buttonsize"><button *ngIf='opacityStat' (click)='opacity()' class='btn-space btn btn-primary'>Opacity</button></div>
-
-
+    <div class="buttonsize"><button *ngIf='shadowStat' (click)='shadow()' class='btn-space btn btn-primary'>Shadow</button></div>
   </div>
 </div>
-  <div class="p-2"><strong> Select Image</strong>
-  <input type="file" image-upload
-  (imageSelected)="selected($event)"
-  [resizeOptions]="resizeOptions">
-
-
+<div class='row'>
+  <div class="col"><strong> Select Image</strong>
+    <input type="file" image-upload
+    (imageSelected)="selected($event)"
+    [resizeOptions]="resizeOptions">
+  </div>
+  <div class="col">
+    <button class='btn btn-danger btn-space'(click)="reset()">Reset</button>
+  </div>
 </div>
 </div>
-<!-- [ngClass]="{
-  'rotate1': rotateStat,
-  'translate1': translateStat,
-  'scale1': scaleStat,
-  'opacity1': opacityStat,
-}" -->
